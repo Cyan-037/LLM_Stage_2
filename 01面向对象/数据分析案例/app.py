@@ -1,6 +1,6 @@
 from file_reader import FileReader
 from data_class import DataClass
-from draw_bar_chart import draw_bar_chart_optimized
+from draw_bar_chart import create_bar_chart
 
 
 def read_all_data(csv_path, json_path) -> list[DataClass]:
@@ -44,8 +44,6 @@ if __name__ == '__main__':
     data = read_all_data(csv_path, json_path)
     date_list, amount_list = data_process(data)
 
-    # 生成优化后的图表
-    chart = draw_bar_chart_optimized(date_list, amount_list)
-
-    # 渲染为 HTML 文件（自动打开）
-    chart.render("optimized_sales_bar_chart.html")
+    chart = create_bar_chart(date_list, amount_list)
+    chart.render("bar_chart.html")
+    print("图表已生成：bar_chart.html")
