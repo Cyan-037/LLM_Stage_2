@@ -1,4 +1,8 @@
 '''
+多进程开发必须写 __name__ == "__main__"
+因为windows坑
+- 因为windows需要区分主进程和子进程的代码
+
 1. 导入进程工具包
     import multiprocessing
 2. 通过进程类 实例化进程 对象
