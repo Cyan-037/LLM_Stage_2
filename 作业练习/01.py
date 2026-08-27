@@ -1,9 +1,13 @@
-def outer(num):
-    def inner():
-        return num + 10
+import socket
 
-    return inner
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+server.bind(('128.0.0.1', 8888))
 
-func = outer(5)
-print(func())
+server.listen()
+
+client, client_info = server.accept()
+
+message = client.recv(1024)
+
+print(f'客户端消息：{message.decode("utf-8")}')
