@@ -5,6 +5,11 @@ MySQL托管的数据极大，性能比Redis低，硬盘
 AI中
 MySQL用于全量记忆（对话历史记录）的存储
 Redis用于当前会话，记忆的缓存
+
+linux系统中，查找自己创建过的docker容器
+sudo docker ps -a
+运行这个创建过的容器
+sudo docker start 容器名
 '''
 import redis
 
